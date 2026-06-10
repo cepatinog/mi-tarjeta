@@ -52,3 +52,11 @@ El archivo es local y está en `.gitignore` — nunca se sube al repositorio.
 1. Explicar el enfoque antes de implementar si el cambio es no trivial
 2. El usuario revisa los archivos modificados antes de commitear
 3. El usuario decide cuándo y qué se sube a GitHub
+4. Al finalizar cada sesión, actualizar `BITACORA.md` con lo trabajado
+
+## Bitácora
+
+`BITACORA.md` es un documento pedagógico público — va al repositorio. Por eso:
+- No incluir información personal (emails, teléfonos, datos privados)
+- Sí incluir decisiones técnicas, razonamiento, comandos y aprendizajes
+- Actualizar al cierre de cada sesión, antes del último commit

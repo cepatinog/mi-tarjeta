@@ -116,17 +116,78 @@ Respuesta honesta:
 
 ---
 
+---
+
+### Etapa 8 — Foto de perfil y links reales
+
+Se reemplazaron los placeholders (`#`) por los links reales y las iniciales "CP" por una fotografía.
+
+**Decisión sobre la foto:** en lugar de apuntar a la URL de LinkedIn, se descargó el archivo localmente con `curl` y se incluyó en el repositorio como `foto.jpg`.
+
+```bash
+curl -L "URL-de-linkedin" -o foto.jpg
+```
+
+Razón: las URLs de LinkedIn tienen fecha de expiración. Una imagen referenciada externamente puede dejar de funcionar sin aviso. Al vivir en el repositorio, la foto es permanente e independiente de terceros.
+
+**¿Es buena práctica subir imágenes a GitHub?**
+
+Depende del tamaño y la cantidad. Git está optimizado para texto — los binarios no tienen diff significativo y cada versión se almacena completa. Para un archivo pequeño (~100KB) en un sitio personal, es aceptable. A escala se usan Git LFS o CDNs externos.
+
+| Situación | Solución |
+|---|---|
+| Pocos assets pequeños | En el repo — está bien |
+| Muchos assets o archivos grandes | Git LFS |
+| Sitio con tráfico real | CDN externo |
+
+**Cambio en CSS:** `.avatar` pasó de ser un `<div>` con iniciales a un `<img>` circular usando `object-fit: cover` y `border-radius: 50%`.
+
+---
+
+### Etapa 9 — Contexto de perfil con PROFILE.md
+
+Se decidió crear un documento de perfil profesional detallado (`PROFILE.md`) como fuente única de verdad para el contenido del sitio.
+
+**Problema:** el repositorio es público. Subir un documento personal extenso lo haría indexable por buscadores.
+
+**Solución:** mantenerlo solo de forma local usando `.gitignore`.
+
+```bash
+# .gitignore
+PROFILE.md
+```
+
+`.gitignore` le indica a git qué archivos debe ignorar — existen en el sistema local pero nunca se suben al repositorio remoto.
+
+`CLAUDE.md` se actualizó con la instrucción de leer `PROFILE.md` antes de escribir cualquier contenido del sitio, y aclarando que no es necesario para tareas técnicas (CSS, HTML, git).
+
+---
+
+### Etapa 10 — Convenciones de bitácora
+
+Se estableció que `BITACORA.md` es público y pedagógico. Reglas definidas:
+- No incluir información personal
+- Documentar decisiones técnicas, razonamiento y aprendizajes
+- Actualizar al cierre de cada sesión de trabajo
+
+Estas reglas quedaron registradas en `CLAUDE.md` para que apliquen automáticamente en sesiones futuras.
+
+---
+
 ### Estado al final de la sesión
 
 - [x] Página web creada y funcionando
 - [x] Repositorio en GitHub con historial de commits
 - [x] Publicada en GitHub Pages
-- [x] `CLAUDE.md` con contexto y reglas de trabajo
-- [x] `BITACORA.md` iniciada
+- [x] Foto de perfil real y links funcionales
+- [x] `CLAUDE.md` con contexto, reglas de trabajo y convenciones de bitácora
+- [x] `.gitignore` configurado para proteger `PROFILE.md`
+- [x] `PROFILE.md` disponible localmente como fuente de contenido
+- [x] `BITACORA.md` como documento pedagógico público
 
 ### Próximas etapas
 
-- [ ] Actualizar links reales (GitHub, LinkedIn, Contacto)
+- [ ] Añadir bio corta a la tarjeta (usando PROFILE.md como fuente)
 - [ ] Añadir sección de proyectos
 - [ ] Explorar sección de música / audio
 - [ ] Introducir JavaScript cuando haya una necesidad concreta
