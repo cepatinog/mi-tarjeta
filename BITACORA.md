@@ -16,6 +16,7 @@ Cada sesión de trabajo tiene su propio archivo en la carpeta [`bitacoras/`](bit
 | [Sesión 4](bitacoras/sesion-04.md) | 2026-06-11 | Rediseño completo: de tarjeta a sitio web con hero, about, proyectos y contacto |
 | [Sesión 5](bitacoras/sesion-05.md) | 2026-06-13 | Pulido de la base: scroll suave + scroll-padding, grid auto-fit, corrección de docs |
 | [Sesión 6](bitacoras/sesion-06.md) | 2026-06-13 | Parte B: secciones Docencia y Media, embeds diferidos, Error 153 y verificación de IDs |
+| [Sesión 7](bitacoras/sesion-07.md) | 2026-06-13 | Salto a JavaScript (etapa 2): menú hamburguesa accesible, scrollspy y CV en el nav |
 
 ---
 
