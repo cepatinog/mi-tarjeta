@@ -13,6 +13,19 @@
   --max-width:        960px;
 }
 
+:root[data-theme="light"] {
+  --color-bg:         #ffffff;
+  --color-card:       #f5f6f8;
+  --color-border:     #e3e6eb;
+  --color-border-sub: #ebedf1;
+  --color-text:       #1f2430;
+  --color-text-mid:   #5a6270;
+  --color-text-dim:   #98a0ac;
+  --color-text-head:  #11151c;
+  --color-accent:     #2e5b9e;
+  --color-accent-bg:  rgba(46, 91, 158, 0.10);
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -103,6 +116,47 @@ body {
 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--color-text-mid);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-toggle .icon-moon {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+  display: inline;
 }
 
 /* === SECTIONS (common) === */

@@ -12,26 +12,38 @@
   <meta property="og:image" content="https://cepatinog.github.io/mi-sitio/assets/images/foto.jpg">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23141414'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='system-ui' font-size='14' font-weight='600' fill='%23e8e8e8'>CP</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    // Set the theme before paint to avoid a flash of the wrong theme
+    document.documentElement.dataset.theme =
+      localStorage.getItem('theme') ||
+      (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  </script>
 </head>
 <body>
 
   <header class="site-header">
     <a href="#hero" class="nav-logo">CP</a>
-    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-    <nav class="nav-links" id="nav-menu">
-      <a href="#hero">Inicio</a>
-      <a href="#about">Sobre mí</a>
-      <a href="#timeline">Trayectoria</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#teaching">Docencia</a>
-      <a href="#media">Media</a>
-      <a href="#contact">Contacto</a>
-      <a href="cv.html" class="nav-cv" target="_blank" rel="noopener">CV</a>
-    </nav>
+    <div class="nav-right">
+      <nav class="nav-links" id="nav-menu">
+        <a href="#hero">Inicio</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#timeline">Trayectoria</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#teaching">Docencia</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contacto</a>
+        <a href="cv.html" class="nav-cv" target="_blank" rel="noopener">CV</a>
+      </nav>
+      <button class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
   </header>
 
   <section id="hero" class="section-hero">

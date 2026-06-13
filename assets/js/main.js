@@ -19,6 +19,28 @@ if (navToggle && navMenu) {
   navMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMenu);
   });
+
+  // Close the menu with Escape or a click outside it
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navMenu.classList.contains('is-open')) closeMenu();
+  });
+  document.addEventListener('click', (event) => {
+    const isOpen = navMenu.classList.contains('is-open');
+    if (isOpen && !navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+}
+
+// Theme toggle (light/dark) with persistence.
+// The initial theme is set by an inline script in <head> to avoid a flash.
+const themeToggle = document.querySelector('.theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('theme', next);
+  });
 }
 
 // Scrollspy: highlight the nav link of the section currently in view
