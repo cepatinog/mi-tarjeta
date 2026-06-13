@@ -17,7 +17,12 @@
 
   <header class="site-header">
     <a href="#hero" class="nav-logo">CP</a>
-    <nav class="nav-links">
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <nav class="nav-links" id="nav-menu">
       <a href="#hero">Inicio</a>
       <a href="#about">Sobre mí</a>
       <a href="#timeline">Trayectoria</a>
@@ -25,6 +30,7 @@
       <a href="#teaching">Docencia</a>
       <a href="#media">Media</a>
       <a href="#contact">Contacto</a>
+      <a href="cv.html" class="nav-cv" target="_blank" rel="noopener">CV</a>
     </nav>
   </header>
 
@@ -286,6 +292,8 @@
   <footer class="site-footer">
     <p>© 2026 Carlos Patiño · Medellín, Colombia</p>
   </footer>
+
+  <script defer src="assets/js/main.js"></script>
 
 </body>
 </html>
